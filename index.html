@@ -1,155 +1,157 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Insect Parade</title>
-<style>
+  <style>
+    @font-face {
+      font-family: 'arsenica';
+      src: url('bold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+    }
 
-@font-face {
-    font-family: 'arsenica';
-    src: url('bold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-}
+    @font-face {
+      font-family: 'arsenica';
+      src: url('extrabold.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+    }
 
-@font-face {
-    font-family: 'arsenica';
-    src: url('extrabold.woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-}
-  
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #22574f;
-  color: #ffefe3;
-  font-family: arsenica;
-  font-size: 20px;
-  font-weight: 600;
-  width: 100%;
-  overflow-x: hidden;
-}
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #22574f;
+      color: #ffefe3;
+      font-family: arsenica;
+      font-size: 20px;
+      font-weight: 600;
+      width: 100%;
+      overflow-x: hidden;
+    }
 
-h1 {
-  position: relative;
-  font-size: 5rem;
-  margin-bottom: 0;
-  font-weight: 900;
-  text-shadow: 6px 0 #0fd, -6px 0 #ff9b92;
-}
+    h1 {
+      position: relative;
+      font-size: 5rem;
+      margin-bottom: 0;
+      font-weight: 900;
+      text-shadow: 6px 0 #0fd, -6px 0 #ff9b92;
+    }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 2px -px #0fd, -6px 1px #ff9b92;
-  }
-  50% {
-    box-shadow: 2px 2px #0fd, -4px -1px #ff9b92;
-  }
-  100% {
-    box-shadow: 2px -1px #0fd, -6px 2px #ff9b92;
-  }
-}
-h1::after {
-  --r: 0px;
-  --b: 0px;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: currentcolor;
-  box-shadow: 6px var(--r) #0fd, -6px var(--b) #ff9b92;
-}
+    @keyframes pulse {
+      0% {
+        box-shadow: 2px -px #0fd, -6px 1px #ff9b92;
+      }
 
-main {
-  flex-grow: 1;
-  display: flex;
-  padding-bottom: 2rem;
-  flex-direction: column;
-  position: relative;
-  height: 100%;
-  margin-left: max(2rem, calc(50vw - 40ch));
-  margin-right: max(2rem, calc(50vw - 40ch));
-  max-width: 80ch;
-}
+      50% {
+        box-shadow: 2px 2px #0fd, -4px -1px #ff9b92;
+      }
 
-main p {
-  flex-grow: 1;
-}
+      100% {
+        box-shadow: 2px -1px #0fd, -6px 2px #ff9b92;
+      }
+    }
 
-main > * {
-  position: relative;
-}
+    h1::after {
+      --r: 0px;
+      --b: 0px;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: currentcolor;
+      box-shadow: 6px var(--r) #0fd, -6px var(--b) #ff9b92;
+    }
 
-main img {
-  position: absolute;
-  right: -200px;
-  bottom: 2rem;
-}
+    main {
+      flex-grow: 1;
+      display: flex;
+      padding-bottom: 2rem;
+      flex-direction: column;
+      position: relative;
+      height: 100%;
+      margin-left: max(2rem, calc(50vw - 40ch));
+      margin-right: max(2rem, calc(50vw - 40ch));
+      max-width: 80ch;
+    }
 
-form {
-  margin: 1rem 0;
-}
+    main p {
+      flex-grow: 1;
+    }
 
-form > label {
-  display: block;
-  margin-bottom: 4px;
-}
+    main>* {
+      position: relative;
+    }
 
-input {
-  background-color: transparent;
-  color: inherit;
-  border: 1px solid currentColor;
-  padding: 8px;
-  font: inherit;
-  box-shadow: 4px 4px #ffefe3;
-}
+    main img {
+      position: absolute;
+      right: -200px;
+      bottom: 2rem;
+    }
 
-input:focus,
-button:focus {
-  outline: none;
-  border-color: #fff71b;
-  box-shadow: 4px 4px #fff71b;
-}
+    form {
+      margin: 1rem 0;
+    }
 
-form > div {
-  display: flex;
-  gap: 1rem;
-}
+    form>label {
+      display: block;
+      margin-bottom: 4px;
+    }
 
-button {
-  background-color: transparent;
-  border: 1px solid currentColor;
-  padding: 8px;
-  font: inherit;
-  color: inherit;
-  box-shadow: 4px 4px #ffefe3;
-}
-</style>
-  
-  
+    input {
+      background-color: transparent;
+      color: inherit;
+      border: 1px solid currentColor;
+      padding: 8px;
+      font: inherit;
+      box-shadow: 4px 4px #ffefe3;
+    }
+
+    input:focus,
+    button:focus {
+      outline: none;
+      border-color: #fff71b;
+      box-shadow: 4px 4px #fff71b;
+    }
+
+    form>div {
+      display: flex;
+      gap: 1rem;
+    }
+
+    button {
+      background-color: transparent;
+      border: 1px solid currentColor;
+      padding: 8px;
+      font: inherit;
+      color: inherit;
+      box-shadow: 4px 4px #ffefe3;
+    }
+  </style>
+
+
 </head>
 
 <body translate="no">
   <main>
-    <img src="https://i.ibb.co/4YcSZFQ/Main-Menu-Illustration-Arcane.png" />
-  <h1>Insect Parade.</h1>
-  <p>Potentially a co-operative video games studio.</p>
-  <form method="post">
-    <label for="email-field">Signup for updates</label>
-    <div><input type="text" name="email" id="email-field" placeholder="james.vidya@yahoo.co.uk" />
-      <button type="submit">Sign up </button>
-    </div>
-  </form>
- 
-</main>  
-  
+    <img src="./image.png" />
+    <h1>Insect Parade.</h1>
+    <p>Potentially a co-operative video games studio.</p>
+    <form method="post">
+      <label for="email-field">Signup for updates</label>
+      <div><input type="text" name="email" id="email-field" placeholder="james.vidya@yahoo.co.uk" />
+        <button type="submit">Sign up </button>
+      </div>
+    </form>
+
+  </main>
+
 </body>
 
 </html>
